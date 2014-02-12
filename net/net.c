@@ -342,12 +342,12 @@ NetLoop(proto_t protocol)
 		NetArpWaitTxPacketSize = 0;
 	}
 
-	eth_halt();
+	//eth_halt();
 #ifdef CONFIG_NET_MULTI
 	eth_set_current();
 #endif
 	if (eth_init(bd) < 0) {
-		eth_halt();
+		//eth_halt();
 		return(-1);
 	}
 
@@ -370,7 +370,7 @@ restart:
 	switch (net_check_prereq (protocol)) {
 	case 1:
 		/* network not configured */
-		eth_halt();
+		//eth_halt();
 		return (-1);
 
 #ifdef CONFIG_NET_MULTI
@@ -481,7 +481,7 @@ restart:
 		 *	Abort if ctrl-c was pressed.
 		 */
 		if (ctrlc()) {
-			eth_halt();
+			//eth_halt();
 			puts ("\nAbort\n");
 			return (-1);
 		}
@@ -535,7 +535,7 @@ restart:
 				sprintf(buf, "%lX", (unsigned long)load_addr);
 				setenv("fileaddr", buf);
 			}
-			eth_halt();
+			//eth_halt();
 			return NetBootFileXferSize;
 
 		case NETLOOP_FAIL:
@@ -578,7 +578,7 @@ void NetStartAgain (void)
 		retry_forever = 1;
 
 	if ((!retry_forever) && (NetTryCount >= retrycnt)) {
-		eth_halt();
+		//eth_halt();
 		NetState = NETLOOP_FAIL;
 		return;
 	}
@@ -589,7 +589,7 @@ void NetStartAgain (void)
 	NetSetTimeout (10000UL, startAgainTimeout);
 	NetSetHandler (startAgainHandler);
 #else	/* !CONFIG_NET_MULTI*/
-	eth_halt ();
+	//eth_halt ();
 #if !defined(CONFIG_NET_DO_NOT_TRY_ANOTHER)
 	eth_try_another (!NetRestarted);
 #endif
@@ -745,7 +745,7 @@ int PingSend(void)
 static void
 PingTimeout (void)
 {
-	eth_halt();
+	//eth_halt();
 	NetState = NETLOOP_FAIL;	/* we did not get the reply */
 }
 

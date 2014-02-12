@@ -103,9 +103,9 @@
 #define CONFIG_ETHADDR  00:40:5c:26:0a:5b
 #define CONFIG_NETMASK          255.255.255.0
 #define CONFIG_IPADDR  192.168.1.20
-#define CONFIG_SERVERIP  192.168.1.10
+#define CONFIG_SERVERIP  192.168.1.123
 #define CONFIG_GATEWAYIP 192.168.1.1
-#define CONFIG_DM9000_DEBUG
+//#define CONFIG_DM9000_DEBUG 
 
 /*
  * select serial console configuration
@@ -156,7 +156,7 @@
  * Miscellaneous configurable options
  */
 #define CONFIG_SYS_LONGHELP				/* undef to save memory	      */
-#define CONFIG_SYS_PROMPT		"SMDK6400 # "	/* Monitor Command Prompt     */
+#define CONFIG_SYS_PROMPT		"WENIX6400 # "	/* Monitor Command Prompt     */
 #define CONFIG_SYS_CBSIZE		256		/* Console I/O Buffer Size    */
 #define CONFIG_SYS_PBSIZE		384		/* Print Buffer Size          */
 #define CONFIG_SYS_MAXARGS		16		/* max number of command args */
